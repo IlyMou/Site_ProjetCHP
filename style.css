@@ -1,0 +1,55 @@
+h1
+{
+  color : red;
+}
+
+h2
+{
+  color : blue;
+}
+
+p
+{
+  color: grey;
+}
+
+.para
+{
+  color: black;
+}
+
+ol, li
+{
+  color: darkblue;
+}
+
+#quest
+{
+  font-style: italic;
+}
+
+
+header
+{
+  display: flex;
+}
+
+.tt:nth-child(2)
+{
+    flex: 1;
+}
+
+
+nav
+{
+  display: flex;
+  width: 1000px;
+  border: 2px solid black;
+}
+
+
+section
+{
+  margin-left: 180px;
+  border: 1px solid blue;
+}
