@@ -1,3 +1,20 @@
+<style>
+html
+{
+  min-height: 100%;
+}
+
+body
+{
+  background: linear-gradient(#6bebff, #6bebff , #a3f3ff, #a3f3ff, #6bebff);
+  background-color: #6bebff; /* Placez une couleur de fond si la page ne charge pas le dégradé */
+  margin:0;
+  padding:0;
+  min-height: 600px
+}
+</style>
+
+
 h1
 {
   color : red;
@@ -28,27 +45,71 @@ ol, li
   font-style: italic;
 }
 
-
 header
 {
   display: flex;
+  justify-content: space-around;
+  align-items:center;
+  background-color: #6bebff;
+  height: 125px;
+  min-width:750px
 }
 
-.tt:nth-child(2)
+.hdr_element
 {
-    flex: 1;
+  width : 300px;
+  height: 120px;
 }
 
+.hdr_element:nth-child(1)
+{
+  /*background-color: orange;*/
+  width : 171px;
+}
+
+.hdr_element:nth-child(2)
+{
+  /*background-color: red;*/
+  flex:1;
+  height: 30px;
+  min-width : 300px;
+}
+
+.hdr_element:nth-child(3)
+{
+  /*background-color: blue;*/
+  height: 56px;
+  width : 250px;
+}
 
 nav
 {
   display: flex;
-  width: 1000px;
-  border: 2px solid black;
+  height: 22px;
+  justify-content: space-around;
+  align-items:center;
+  border: 1px solid #194c70;
+  background-color: #20608d;
+  min-width:750px
 }
 
+.texte
+{
+  color : white;
+  background-color: #20608d;
+}
+
+.texte:hover
+{
+  color : black;
+}
 
 section
+{
+  background-color: linear-gradient(#a3f3ff, #6bebff);
+}
+
+sect
 {
   margin-left: 180px;
   border: 1px solid blue;
