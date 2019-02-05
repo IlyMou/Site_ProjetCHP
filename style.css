@@ -52,7 +52,7 @@ header
   align-items:center;
   background-color: #6bebff;
   height: 125px;
-  min-width:750px
+  min-width:750px;
 }
 
 .hdr_element
@@ -64,15 +64,19 @@ header
 .hdr_element:nth-child(1)
 {
   /*background-color: orange;*/
-  width : 171px;
+  width : 180px;
 }
 
 .hdr_element:nth-child(2)
 {
   /*background-color: red;*/
   flex:1;
-  height: 30px;
+  height: 125px;
   min-width : 300px;
+  font-family:  Georgia, Arial;
+  line-height:4em;
+  background-image: url("Images/flocons_mini.png");
+  background-position: top right;
 }
 
 .hdr_element:nth-child(3)
@@ -90,7 +94,8 @@ nav
   align-items:center;
   border: 1px solid #194c70;
   background-color: #20608d;
-  min-width:750px
+  min-width: 750px;
+  font-family : Verdana, Times New Roman;
 }
 
 .texte
@@ -106,10 +111,15 @@ nav
 
 section
 {
-  background-color: linear-gradient(#a3f3ff, #6bebff);
+  display: flex;
+  justify-content: space-around;
+  max-width: 900px;
+  min-width: 500px;
+  height: 170px;
 }
 
-sect
+
+#sect
 {
   margin-left: 180px;
   border: 1px solid blue;
