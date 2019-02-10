@@ -45,11 +45,17 @@
   </ul> -->
 
   <h2>Cleaning</h2>
-  <p>The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.</p>
-  <p>For each function, the function is removed if the function is not necessary. Else unnecessary part, like viscous part or lift coefficient, are removed.</p>
+  <p>The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.
+    For each function,if the function is not necessary, the function is removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary part, like viscous part or lift coefficient, are removed.
+  We have verified that the results in a test case doesn't change.
+32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.</p>
 
 
   <h2>Output</h2>
+  <p>there are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
+  The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
+  We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
+  We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.</p>
 
   <h2>Terme source (<a href="ts.html">details</a>)</h2>
 
