@@ -25,19 +25,21 @@
     <a class="texte" style="text-decoration:none" href="contact.html">Contact</a>
   </nav>
 
-  <h2>Dupliacation of Euler model</h2>
-  <!-- <ol>
-    <li>Comprehension du code</li>
-    <li>Copie de Euler</li>
-  </ol> -->
+  <center>
+    <section>
+      <h2>Dupliacation of Euler model</h2>
+      <!-- <ol>
+      <li>Comprehension du code</li>
+      <li>Copie de Euler</li>
+    </ol> -->
 
-  <figure>
-    <a href="../Images/graphe.png"><img src="../Images/graphe_mini.png" alt="Duplication" /></a>
-    <figcaption>Copie de la classe Euler en une classe Impact</figcaption>
-  </figure>
+    <figure>
+      <a href="../Images/graphe.png"><img src="../Images/graphe_mini.png" alt="Duplication" /></a>
+      <figcaption>Copie de la classe Euler en une classe Impact</figcaption>
+    </figure>
 
-  <!-- <p class="para"> Puis </p> -->
-  <!-- <ul>
+    <!-- <p class="para"> Puis </p> -->
+    <!-- <ul>
     <li>Nettoyage des fonctions inutile</li>
     <li>Affichage des quantités utiles</li>
     <li>Terme source (<a href="ts.html">details</a>)</li>
@@ -47,19 +49,21 @@
   <h2>Cleaning</h2>
   <p>The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.
     For each function,if the function is not necessary, the function is removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary part, like viscous part or lift coefficient, are removed.
-  We have verified that the results in a test case doesn't change.
-32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.</p>
+    We have verified that the results in a test case doesn't change.
+    32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.</p>
 
 
-  <h2>Output</h2>
-  <p>there are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
-  The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
-  We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
-  We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.</p>
+    <h2>Output</h2>
+    <p>there are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
+      The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
+      We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
+      We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.</p>
 
-  <h2>Terme source (<a href="ts.html">details</a>)</h2>
+      <h2>Terme source (<a href="ts.html">details</a>)</h2>
 
-  <h2>Condition aux bords</h2>
+      <h2>Condition aux bords</h2>
+    </section>
+  </center>
 
   <footer>
     <p>Si vous avez des <span id="quest">questions</span>, n'hésitez pas à m'envoyer un <a href="bidule@truc.com">mail</a> !</p>

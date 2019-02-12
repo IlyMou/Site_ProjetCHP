@@ -10,7 +10,7 @@ body
   background-color: #6bebff; /* Placez une couleur de fond si la page ne charge pas le dégradé */
   margin:0;
   padding:0;
-  min-height: 600px
+  min-height: 600px;
 }
 </style>
 
@@ -27,7 +27,7 @@ h2
 
 p
 {
-  color: grey;
+  color: black;
 }
 
 .para
@@ -75,7 +75,7 @@ header
   min-width : 300px;
   font-family:  Georgia, Arial;
   line-height:4em;
-  background-image: url("Images/flocons_mini.png");
+  /*background-image: url("Images/flocons_mini.png");*/
   background-position: top right;
 }
 
@@ -91,7 +91,6 @@ nav
   display: flex;
   height: 22px;
   justify-content: space-around;
-  align-items:center;
   border: 1px solid #194c70;
   background-color: #20608d;
   min-width: 750px;
@@ -111,11 +110,11 @@ nav
 
 section
 {
-  display: flex;
   justify-content: space-around;
-  max-width: 900px;
+  text-align: justify;
+  align-items:center;
+  max-width: 600px;
   min-width: 500px;
-  height: 170px;
 }
 
 
