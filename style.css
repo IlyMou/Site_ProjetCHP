@@ -52,7 +52,7 @@ header
   align-items:center;
   background-color: #6bebff;
   height: 125px;
-  min-width:750px;
+  min-width:830px;
 }
 
 .hdr_element
@@ -72,7 +72,7 @@ header
   /*background-color: red;*/
   flex:1;
   height: 125px;
-  min-width : 300px;
+  min-width : 400px;
   font-family:  Georgia, Arial;
   line-height:4em;
   /*background-image: url("Images/flocons_mini.png");*/
