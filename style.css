@@ -6,33 +6,45 @@ html
 
 body
 {
-  background: linear-gradient(#6bebff, #6bebff , #a3f3ff, #a3f3ff, #6bebff);
-  background-color: #6bebff; /* Placez une couleur de fond si la page ne charge pas le dégradé */
-  margin:0;
+  /* background: linear-gradient(#ABC8E2, #375D81, #183152, #375D81, #ABC8E2); */
+  /* background: linear-gradient(#243347, #334864, #456186, #334864, #243347); */
+  background: linear-gradient(#243347, #334864, #243347);
+  text-align: justify;
+  background-color: #334864; /* Placez une couleur de fond si la page ne charge pas le dégradé */
   padding:0;
+  margin:0;
   min-height: 600px;
 }
-</style>
-
 
 h1
 {
-  color : red;
+  color : #243347;
 }
 
 h2
 {
-  color : blue;
+  color : #5D85B9;
+}
+
+h3
+{
+  color : red;
+}
+
+h4
+{
+  color : green;
 }
 
 p
 {
-  color: black;
+  /* color: #9CC7FE; */
+  color : #CBD0D6;
 }
 
 .para
 {
-  color: black;
+  color: #9CC7FE;
 }
 
 ol, li
@@ -50,7 +62,7 @@ header
   display: flex;
   justify-content: space-around;
   align-items:center;
-  background-color: #6bebff;
+  background-color: #6C86A8;
   height: 125px;
   min-width:830px;
 }
@@ -63,7 +75,7 @@ header
 
 .hdr_element:nth-child(1)
 {
-  /*background-color: orange;*/
+  /* background-color: #000728; */
   width : 180px;
 }
 
@@ -90,17 +102,17 @@ nav
 {
   display: flex;
   height: 22px;
-  justify-content: space-around;
+  justify-content: center;
   border: 1px solid #194c70;
-  background-color: #20608d;
+  background-color: #446B9C;
   min-width: 750px;
   font-family : Verdana, Times New Roman;
 }
 
 .texte
 {
-  color : white;
-  background-color: #20608d;
+  color : #CBD0D6;
+  /* background-color: #20608d; */
 }
 
 .texte:hover
@@ -122,3 +134,5 @@ section
   margin-left: 180px;
   border: 1px solid blue;
 }
+
+</style>
