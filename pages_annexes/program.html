@@ -29,7 +29,7 @@
 
   <center>
     <section>
-      <h2>Dupliacation of Euler model</h2>
+      <h2>Duplication of Euler model</h2>
       <!-- <ol>
       <li>Comprehension du code</li>
       <li>Copie de Euler</li>
@@ -38,7 +38,11 @@
 
 
       <p>In the SU2 code, a solver has been added for impact equation.
-      This solver use the air solution generated with the Euler solver.</p>
+      This solver use the air solution generated with the Euler solver.
+      Impact equations are similar to the Euler equations, so the impact solver is based on the Euler solver.
+      At the beginning we have search how is build the Euler solver to duplicate this solver and create the impact solver.
+      The duplication of the solver has added 20.000 lines in the SU2 code.
+      </p>
 
 
 
