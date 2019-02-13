@@ -66,20 +66,19 @@ header
   align-items:center;
   background-color: #6C86A8;
   font-style: italic;
-  height: 125px;
+  height: 220px;
   min-width:830px;
 }
 
 .hdr_element
 {
-  width : 300px;
-  height: 120px;
+  height: 220px;
 }
 
 .hdr_element:nth-child(1)
 {
   /* background-color: #000728; */
-  width : 180px;
+  width : 300px;
 }
 
 .hdr_element:nth-child(2)
@@ -97,15 +96,14 @@ header
 .hdr_element:nth-child(3)
 {
   /*background-color: blue;*/
-  height: 56px;
-  width : 250px;
+  height: 60px;
 }
 
 nav
 {
   display: flex;
   height: 22px;
-  font-size : 17px;
+  font-size : 18px;
   justify-content: center;
   border: 1px solid #194c70;
   background-color: #446B9C;
@@ -145,6 +143,7 @@ footer
   text-align: justify;
   max-width:850px;
   min-width:800px;
+  min-height:50px;
 }
 
 toph
