@@ -105,6 +105,7 @@ nav
 {
   display: flex;
   height: 22px;
+  font-size : 17px;
   justify-content: center;
   border: 1px solid #194c70;
   background-color: #446B9C;
