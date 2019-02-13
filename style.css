@@ -132,6 +132,18 @@ section
   width: 800px;
 }
 
+footer
+{
+  text-align: justify;
+  max-width:850px;
+  min-width:800px;
+}
+
+toph
+{
+  display: flex;
+  justify-content: space-around;
+}
 
 #sect
 {
