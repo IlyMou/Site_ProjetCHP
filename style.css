@@ -129,6 +129,11 @@ section
   width: 800px;
 }
 
+toph
+{
+  display: flex;
+  justify-content: space-around;
+}
 
 #sect
 {
