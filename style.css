@@ -55,6 +55,11 @@ ol, li
   color: darkblue;
 }
 
+figcaption
+{
+  color : white;
+}
+
 #quest
 {
   font-style: italic;
