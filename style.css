@@ -123,6 +123,13 @@ nav
   color : black;
 }
 
+.text
+{
+  text-decoration: none;
+  color : #CBD0D6;
+  font-weight: bold;
+}
+
 section
 {
   justify-content: space-around;

@@ -67,11 +67,11 @@
       <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
       <p>
         As said before, the Euler problem was duplicated but for the Impact, the <a href="problem.html" class="text">system</a> to resolve is different.
-        Indeed, in comparison the the Euler problem, there is no pressure term and there are two terms to add : the drag and the gravity terms.
+        Indeed, in comparison with the Euler problem, there is no pressure term and there are two terms to add : the drag and the gravity terms.
       </p>
 
       <p>
-        First, the gravity term was already implemented in SU2, so *we just had to take example to a part of the code where it is used and do the same for us.*
+        First, the gravity term was already implemented in SU2, so it should be added for the Impact model in the same way than in the other model where it is used.
         But for the drag term, it was added exclusively for the Impact problem. In order to know how to add them,
         we rewrote the problem in a conservative way with F the flow and Q the source term.
       </p>
