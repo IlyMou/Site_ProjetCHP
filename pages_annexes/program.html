@@ -87,26 +87,39 @@
       <p>
         First, the gravity term was already implemented in SU2, so it should be added for the Impact model in the same way than in the other model where it is used.
         But for the drag term, it was added exclusively for the Impact problem. In order to know how to add them,
-        we rewrote the problem in a conservative way with F the flow and Q the source term.
+        we rewrote the problem in a conservative way with W the solution vector, F the flow and Q the source term.
       </p>
 
-      <div lang="latex" background="white">
-        \partial_tW + \nabla\cdot F(W) = Q(W) \\
-      </div>
+      <center>
+        <div lang="latex" background="white" class="larg1">
+          \partial_tW + \nabla\cdot F(W) = Q(W) \\
+        </div>
+      </center>
 
       <p>
         Then, knowing that the numerical scheme used to solve this equation is a Roe scheme with implicit Euler, the source term needed to be added properly in the Jacobian of the system.
         This Jacobian is described below, where the Jacobian of R is the Jacobian of the let part of the previous equation, already computed in the Euler model, and the Jacobian of Q is the jacobian of the source term.
+      </p>
+
+      <center>
+        <div lang="latex" background="white" class="larg2">
+          Jac(W) = Jac_R(W) - Jac_Q(W)
+        </div>
+      </center>
+
+      <p>
         Hence, the Jacobian of Q was calculated and added to the global Jacobian of the system.
       </p>
 
-      <div lang="latex" background="white">
-        $$ Jac_Q(W) = \begin{pmatrix} 0 & 0 & 0 & 0 \\
-        Cu_a &  -C & 0 & 0 \\
-        Cv_a & 0 & -C & 0 \\
-        Cw_a - \left(1 - \frac{\rho_a}{\rho_w}\right) g& 0 & 0 & -C
-        \end{pmatrix}$$
-      </div>
+      <center>
+        <div lang="latex" background="white" class="larg3">
+          $$ Jac_Q(W) = \begin{pmatrix} 0 & 0 & 0 & 0 \\
+          Cu_a &  -C & 0 & 0 \\
+          Cv_a & 0 & -C & 0 \\
+          Cw_a - \left(1 - \frac{\rho_a}{\rho_w}\right) g& 0 & 0 & -C
+          \end{pmatrix}$$
+        </div>
+      </center>
 
       <p>
         After added this two terms, the pressure term had to be removed. However, according to several publications, the removal of the pressure term leads to some numerical problems and even more to a solution that diverges.
@@ -118,12 +131,14 @@
         A new type of boundary conditions for the Impact model was added, named IMPACT WALL and discrebed below.
       </p>
 
-      <div lang="latex" background="white">
-        $$\\
-        \textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n}=0 ~~\text{and}~~ \alpha^{n+1} = \epsilon ~~~~~~\text{if }~~ \alpha^{n+1}\textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n}>0 \\
-        \textbf{u}_{\textbf{d}}^{n+1}=\textbf{u}_{\textbf{d}}^{n} ~~~\text{and}~~ \alpha^{n+1} = \alpha^{n} ~~~~~\text{if }~~ \alpha^{n+1}\textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n} \leq 0\\
-        $$
-      </div>
+      <center>
+        <div lang="latex" background="white"  class="larg4">
+          $$\\
+          \textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n}=0 ~~\text{and}~~ \alpha^{n+1} = \epsilon ~~~~~~\text{if }~~ \alpha^{n+1}\textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n}>0 \\
+          \textbf{u}_{\textbf{d}}^{n+1}=\textbf{u}_{\textbf{d}}^{n} ~~~\text{and}~~ \alpha^{n+1} = \alpha^{n} ~~~~~\text{if }~~ \alpha^{n+1}\textbf{u}_{\textbf{d}}^{n+1}\cdot \textbf{n} \leq 0\\
+          $$
+        </div>
+      </center>
 
       <p>
         The idea is that : if the speed of the flow penetrates the boundary, we set the velocity normal component  and the coefficient alpha at 0
@@ -134,8 +149,15 @@
           <img src="../Images/aile.png" alt="Boundary Conditions Figure" title="Boundary Conditions Figure" />
           <figcaption> Figure 2 : IMPACT WALL boundary condition</figcaption>
         </figure>
-
       </center>
+
+      <p>&nbsp;</p> <p>&nbsp;</p>
+
+      <p>
+        These modifications enable us to start running the program and studying the results. The various results obtained
+        is presented in the tab <a href="results.html" class="text">Results</a>.
+      </p>
+
     </section>
   </center>
 
