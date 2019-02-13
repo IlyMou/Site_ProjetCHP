@@ -66,19 +66,19 @@ header
   align-items:center;
   background-color: #6C86A8;
   font-style: italic;
-  height: 220px;
-  min-width:830px;
+  height: 200px;
+  min-width:1200px;
 }
 
 .hdr_element
 {
-  height: 220px;
+  height: 197px;
 }
 
 .hdr_element:nth-child(1)
 {
   /* background-color: #000728; */
-  width : 300px;
+  width : 340px;
 }
 
 .hdr_element:nth-child(2)
@@ -86,7 +86,7 @@ header
   /*background-color: red;*/
   flex:1;
   height: 125px;
-  min-width : 400px;
+  min-width : 500px;
   font-family:  Georgia, Arial;
   line-height:3.4em;
   /*background-image: url("Images/flocons_mini.png");*/
@@ -96,7 +96,7 @@ header
 .hdr_element:nth-child(3)
 {
   /*background-color: blue;*/
-  height: 60px;
+  height: 70px;
 }
 
 nav
