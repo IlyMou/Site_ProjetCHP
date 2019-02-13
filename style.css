@@ -63,6 +63,7 @@ header
   justify-content: space-around;
   align-items:center;
   background-color: #6C86A8;
+  font-style: italic;
   height: 125px;
   min-width:830px;
 }
