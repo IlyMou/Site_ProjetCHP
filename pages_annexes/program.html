@@ -41,7 +41,7 @@
       This solver use the air solution generated with the Euler solver.
       Impact equations are similar to the Euler equations, so the impact solver is based on the Euler solver.
       At the beginning we have search how is build the Euler solver to duplicate this solver and create the impact solver.
-      The duplication of the solver has added 20.000 lines in the SU2 code.
+      The duplication of the solver has added 20,000 lines distributed in different files in the SU2 code.
       </p>
 
 
@@ -74,8 +74,8 @@
       <p>
         There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
         The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
-        We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
-        We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.
+        Impact variables have been added in both conservative and non-conservative forms to ease postprocessing.
+        The collection efficiency, which characterise the ability of the airfoil to capture water, has been computed and exported. This is a common way in the literature to compare droplet impingement rates.
       </p>
 
       <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
