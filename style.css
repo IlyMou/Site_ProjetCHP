@@ -45,6 +45,19 @@ p
   color : #CBD0D6;
 }
 
+div
+{
+  display: flex;
+  text-align: center;
+  align-items:center;
+  justify-content: space-around;
+  background-color: white;
+  border: 2px groove #194c70;
+  border-radius: 10px;
+  min-height : 25px;
+  color: white;
+}
+
 .para
 {
   color: #9CC7FE;
