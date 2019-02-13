@@ -33,18 +33,64 @@
       <p>
         The icing problem consists is foreseeing where the water droplets impact the structure.
         To do so, there are two different possible approaches. The first one and the most instinctive is the Lagrangian
-        approach, where each droplet would be described with its own trajectory, the equations would describe the
-        movement of the droplets. In this project, the Eulerian approach has been chosen. The idea is to evaluate the
-        water volume fraction at each point of the space.
+        approach, where each droplet would be described with its own trajectory. In this case, the equations would directly
+        describe the droplets movement. But in this project, the Eulerian approach has been chosen. The idea is to evaluate the
+        water volume fraction at each point of the space, which is defined by the ratio between the water volume and the total
+        volume in a given space.
       </p>
 
-      <h2>Variables and equations</h2>
+      <h2>Variables and initial equations</h2>
 
       <p>
         Here are the variables used to describe the problem.
       </p>
 
       <img src="../Images/Variables.png" alt="variables" title="Problem variables" width=800px/>
+
+      <p>
+        <br />
+        The initial equations of the problem are these two conservation laws.
+      </p>
+      <br />
+
+      <center>
+        <img src="../Images/Initial_Equations.png" alt="initial equations" title="Initial equations" width=600px/>
+      </center>
+
+      <h2> Hypothesis and approximations </h2>
+
+      <p>
+        To simplify the problem and the simulation, two approximations have been made. The first one is the deletion of
+        the last source term corresponding to the air acceleration, it is negligible with respect to the other terms. The
+        second approximation is to consider the drag coefficient and the Reynolds number as constant at each time step,
+        this way the source term stays linear with the conservative variables.
+      </p>
+
+      <h2> Final equations and comparison with the Euler equations </h2>
+
+      <p>
+        After having been simplified and modified, the impact equations can be rewritten like this.
+      </p>
+
+      <center>
+        <img src="../Images/Final_Equations.png" alt="final equations" title="Final equations" width=700px/>
+      </center>
+
+      <p>
+        These equations are quite close to the Euler equations given just below. The Euler equations are used in fluid
+        dynamics to describe gas or liquid flows without viscosity or heat transfers. They are composed of three conservation
+        laws: the conservation of mass, of momentum and of energy. Compared to the Euler equations, the impact equations have
+        the same structure. The density is replaced by the water volume fraction, the conservation law and the pressure gradient are removed,
+        and a source term is added. This source term is mainly comprised of a drag force, leading the droplets to the air flow
+        direction. Then the inertia of the droplets make them collide with the plane if the air flow isn't regular enough.
+        This closeness between the two systems of equations enables to create a solver for the impact equations just by modifying
+        a pre-existing solver for the Euler equations. This is the task that has been done in the software SU2.
+      </p>
+
+      <center>
+        <img src="../Images/Euler_Equations.png" alt="euler equations" title="Euler equations" width=400px/>
+      </center>
+
     </section>
   </center>
 
