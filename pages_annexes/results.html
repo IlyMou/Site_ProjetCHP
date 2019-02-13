@@ -35,12 +35,18 @@
       <p>
         On the figure below, it is possible to observe the chosen unstructured mesh which is more refined around the airfoil.
       </p>
+      <center>
+        <img src="../Images/paraview_mesh.png" alt="paraview_mesh" title="2D mesh" width=400px/>
+      </center>
       <p>
-        As said before, in order to run the impact equations around the geometry, one needs first to obtain the air solution by running the Euler equations with the very same parameters. For the 2D validation of the code, the results were compared with the ones obtained by Kim et al. in their paper « Ice accretion modeling using an eulerian approach for droplet impingement », since they are using an Eulerian approach too. Furthermore, the same variables were chosen by setting Ma=0.31 and MVD=0.2micrometer.
+        As said before, in order to run the impact equations around the geometry, one needs first to obtain the air solution by running the Euler equations with the very same parameters. For the 2D validation of the code, the results were compared with the ones obtained by Kim et al. in their paper « Ice accretion modeling using an eulerian approach for droplet impingement », since they are using an Eulerian approach too. Furthermore, the same variables were chosen by setting Ma=0.31 and MVD=0.2μm.
       </p>
       <p>
-        The easiest way to compare the results is to plot the collection efficiency (beta) according to the curvilinear abscissa. The comparisons were performed for two different angles of attack (AoA=0° and AoA=4°), for a constant MVD of 20 (mu)m.
+        The easiest way to compare the results is to plot the collection efficiency (β) according to the curvilinear abscissa. The comparisons were performed for two different angles of attack (AoA=0° and AoA=4°), for a constant MVD of 20μm.
       </p>
+      <center>
+        <img src="../Images/Comp_beta_MVD20.png" alt="Comp_beta_MVD20" title="Comp beta MVD20" width=800px/>
+      </center>
       <p>
         On the figure above, it appears that the curves are not overlapping, even if the same general shape is observed it both cases. The error on the maximum is approximately 7% percents and is consistant with the errors on the curvilinear abscissae for which the beta coefficient reaches zero, on the lower and the upper parts of the wing. Besides, the shifting of the curve alongside the AoA in the second case is indeed observable on our results and enable us to validate the general constituency of our new IMPACT model.
       </p>
@@ -48,10 +54,14 @@
         There are various hypotheses which may explain the discrepancies between the results, but above all we think that it could be possible to enhance the correspondance by using a more refined mesh, since ours might be too coarse in front of the one used by Kim et al.
       </p>
       <p>
-        After that, the opposite was done, meaning that the AoA was set at 0°, leaving only the droplet diameters to vary from 10 to 160 (mu)m.
+        After that, the opposite was done, meaning that the AoA was set at 0°, leaving only the droplet diameters to vary from 10 to 160μm.
       </p>
+      <center>
+        <img src="../Images/Comp_beta_AoA0.png" alt="Comp_beta_AoA0" title="Comp beta AoA0" width=400px/>
+        <img src="../Images/beta_comp.png" alt="beta_comp" title="beta comp" width=400px/>
+      </center>
       <p>
-        The figure that gathers all the results for the collection efficiencies, shows that, as it was foreseen, the impingement on the leading edge of the airfoil is increasing in accordance with the droplet diameters. Hence, for an important size of droplet, the maximum of the collection efficiency is getting closer to 1, which means a perfect water catchment of the leading edge. Moreover, it can be seen on the 2D view that a greater size for the droplets enables them to impinge a larger part of the wing, which is also a very important results.
+        This figure that gathers all the results for the collection efficiencies, shows that, as it was foreseen, the impingement on the leading edge of the airfoil is increasing in accordance with the droplet diameters. Hence, for an important size of droplet, the maximum of the collection efficiency is getting closer to 1, which means a perfect water catchment of the leading edge. Moreover, it can be seen on the 2D view that a greater size for the droplets enables them to impinge a larger part of the wing, which is also a very important results.
       </p>
       <p>
         Finally, with all the computation over this first 2D geometry, we were confident to test our model on 3D cases, and switch to the ONERA M6 airfoil.
