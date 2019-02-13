@@ -17,13 +17,14 @@
   </header>
 
   <nav>
-    <a class="texte" style="text-decoration:none" href="../accueil.html">Home page</a>
-    <a class="texte" style="text-decoration:none" href="problem.html">Physic model</a>
-    <a class="texte" style="text-decoration:none" href="su2.html">SU2 Code</a>
-    <a class="texte" style="text-decoration:none" href="program.html">Programming</a>
-    <a class="texte" style="text-decoration:none" href="results.html">Numerical Results</a>
-    <a class="texte" style="text-decoration:none" href="contact.html">Contact</a>
+    <a class="texte" href="../accueil.html">HOME</a> &nbsp; &nbsp; &nbsp;
+    <a class="texte" href="problem.html">PHYSICAL MODEL</a> &nbsp; &nbsp; &nbsp;
+    <a class="texte" href="su2.html">SU2 CODE</a> &nbsp; &nbsp; &nbsp;
+    <a class="texte" href="program.html">PROGRAMMING</a> &nbsp; &nbsp; &nbsp;
+    <a class="texte" href="results.html">NUMERICAL RESULTS</a> &nbsp; &nbsp; &nbsp;
+    <a class="texte" href="contact.html">ABOUT US</a>
   </nav>
+
 
   <center>
     <section>
@@ -31,81 +32,75 @@
       <!-- <ol>
       <li>Comprehension du code</li>
       <li>Copie de Euler</li>
-    </ol> -->
+      </ol> -->
 
-    <figure>
-      <a href="../Images/graphe.png"><img src="../Images/graphe_mini.png" alt="Duplication" /></a>
-      <figcaption>Copie de la classe Euler en une classe Impact</figcaption>
-    </figure>
+      <figure>
+        <a href="../Images/graphe.png"><img src="../Images/graphe_mini.png" alt="Duplication" /></a>
+        <figcaption>Copie de la classe Euler en une classe Impact</figcaption>
+      </figure>
 
-    <!-- <p class="para"> Puis </p> -->
-    <!-- <ul>
-    <li>Nettoyage des fonctions inutile</li>
-    <li>Affichage des quantités utiles</li>
-    <li>Terme source (<a href="ts.html">details</a>)</li>
-    <li>Condition aux bords</li>
-  </ul> -->
+      <!-- <p class="para"> Puis </p> -->
+      <!-- <ul>
+      <li>Nettoyage des fonctions inutile</li>
+      <li>Affichage des quantités utiles</li>
+      <li>Terme source (<a href="ts.html">details</a>)</li>
+      <li>Condition aux bords</li>
+      </ul> -->
 
-  <h2>Cleaning</h2>
-  <p>
-    The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.
-    For each function,if the function is not necessary, the function is removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary part, like viscous part or lift coefficient, are removed.
-    We have verified that the results in a test case doesn't change.
-    32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.
-  </p>
+      <h2>Cleaning</h2>
+      <p>
+        The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.
+        For each function,if the function is not necessary, the function is removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary part, like viscous part or lift coefficient, are removed.
+        We have verified that the results in a test case doesn't change.
+        32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.
+      </p>
 
 
-  <h2>Output</h2>
-  <p>
-    There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
-    The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
-    We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
-    We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.
-  </p>
+      <h2>Output</h2>
+      <p>
+        There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
+        The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
+        We have added impact variables in both conservative and non-conservative forms to ease postprocessing.
+        We have computed and export the collection efficiency which characterise the ability of the airfoil to capture water. This is a common way in the literature to compare droplet impingement rates.
+      </p>
 
-  <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
-  <p>
-    As showed before, the Euler problem was dupllicated but for our problem we needed to resolve a different <a href="problem.html" class="text">system</a>.
-    For this system, there is no pressure term and there are two terms to add : the drag and the gravity terms.
-  </p>
+      <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
+      <p>
+        As showed before, the Euler problem was dupllicated but for our problem we needed to resolve a different <a href="problem.html" class="text">system</a>.
+        For this system, there is no pressure term and there are two terms to add : the drag and the gravity terms.
+      </p>
 
-  <p>
-    First, the gravity term was already implemented in SU2, so we just had to take example to a part of the code where it is used and do the same for us.
-    But for the drag term, we needed to add it, exclusively for the Impact problem. In order to know how to add it,
-    we rewrote the problem in a conservative way with F the flow and Q the source term.
-  </p>
-  <a href="../Images/ConsEq.png"><img src="../Images/ConsEq_mini.png" alt="Conservative Equation" title="Conservative Equation" /></a>
-  <p>
-    Then, knowing that the numerical scheme used to solve this equation is a Roe scheme with implicit Euler, we needed to add properly the source term in the Jacobian of the system.
-    The Jacobian of the system is described below., where the Jacobian of R is the Jacobian of the let part of the previous equation and the Jacobian of Q is the jacobian of the source term.
-    Hence, we calculated this Jacobian and added to the gobal Jacobian of the system.
-  </p>
-  <a href="../Images/Jac.png"><img src="../Images/Jac.png" alt="Jacobian of R" title="J_R" /></a>
-  <p>
-    After added this two terms, we had to deal with the pressure term. According to several publications, the removal of the pressure term leads to some numerical problem and even more with a solution taht diverge.
-    So, a work was needed to stabilize the system, and that was done by our supervizors.
-  </p>
+      <p>
+        First, the gravity term was already implemented in SU2, so we just had to take example to a part of the code where it is used and do the same for us.
+        But for the drag term, we needed to add it, exclusively for the Impact problem. In order to know how to add it,
+        we rewrote the problem in a conservative way with F the flow and Q the source term.
+      </p>
+      <a href="../Images/ConsEq.png"><img src="../Images/ConsEq_mini.png" alt="Conservative Equation" title="Conservative Equation" /></a>
+      <p>
+        Then, knowing that the numerical scheme used to solve this equation is a Roe scheme with implicit Euler, we needed to add properly the source term in the Jacobian of the system.
+        The Jacobian of the system is described below., where the Jacobian of R is the Jacobian of the let part of the previous equation and the Jacobian of Q is the jacobian of the source term.
+        Hence, we calculated this Jacobian and added to the gobal Jacobian of the system.
+      </p>
+      <a href="../Images/Jac.png"><img src="../Images/Jac.png" alt="Jacobian of R" title="J_R" /></a>
+      <p>
+        After added this two terms, we had to deal with the pressure term. According to several publications, the removal of the pressure term leads to some numerical problem and even more with a solution taht diverge.
+        So, a work was needed to stabilize the system, and that was done by our supervizors.
+      </p>
 
-  <h2>Boundary Conditions</h2>
-  <p>
-    We added a new type of boundary Conditions for the Impact model. The idea is that : if the speed of the flow penetrates the boundary, we set the velocity at 0
-    and if the speed of flow emerges fromthe boundary, the velocity is not changed. Simultaneously, we added a new variable  define on this IMPACT WALL boundary where the impinging mass is calculated.
-  </p>
-  <a href="../Images/BoundCond.png"><img src="../Images/BoundCond.png" alt="Boundary Conditions" title="Boundary Conditions" /></a>
+      <h2>Boundary Conditions</h2>
+      <p>
+        We added a new type of boundary Conditions for the Impact model. The idea is that : if the speed of the flow penetrates the boundary, we set the velocity at 0
+        and if the speed of flow emerges fromthe boundary, the velocity is not changed. Simultaneously, we added a new variable  define on this IMPACT WALL boundary where the impinging mass is calculated.
+      </p>
+      <a href="../Images/BoundCond.png"><img src="../Images/BoundCond.png" alt="Boundary Conditions" title="Boundary Conditions" /></a>
 
-</section>
-</center>
+    </section>
+  </center>
 
-<footer>
-  <p>Si vous avez des <span id="quest">questions</span>, n'hésitez pas à m'envoyer un <a href="bidule@truc.com">mail</a> !</p>
-  <p>
-    <a href="https://www.epsilon-alcen.com/fr">EPSILON ALCEN</a><br />
-    <a href="https://enseirb-matmeca.bordeaux-inp.fr/fr">ENSEIRB-MATMECA</a>
-  </p>
 
-  <p>
-    <a href="../Images/logo.png"><img src="../Images/logo_mini.png" alt="Logo ENSEIRB-MATMECA" title="ENSEIRB-MATMECA" /></a>
-  </p>
-</footer>
+  <footer>
+
+  </footer>
+
 </body>
 </html>
