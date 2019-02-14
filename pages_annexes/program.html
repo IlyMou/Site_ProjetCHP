@@ -51,7 +51,7 @@
       <center>
         <figure>
           <img src="../Images/graphe.png" alt="Duplication" />
-          <figcaption> Figure 1 : Duplication of Euler model in Impact model</figcaption>
+          <figcaption> Figure 1 : Duplication of Euler model in impact model</figcaption>
         </figure>
       </center>
 
@@ -65,7 +65,7 @@
 
       <h2>Cleaning</h2>
       <p>
-        The goal of the cleaning was to reduce the number of lines in the Impact solver, mainly in solver_direct_impact.cpp. The cleaning was supposed to ease the work in this file.
+        The goal of the cleaning was to reduce the number of lines in the impact solver, mainly in solver_direct_impact.cpp. The cleaning was supposed to ease the work in this file.
         For each function, if the function was not necessary, the function was removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary parts, like viscous part or lift coefficient, were removed.
         After every modification, a series of tests was needed in order to check that the results remained unchanged.
         32 function have been removed, which reduced the number of lines in solver_direct_impact.cpp by 9,000.
@@ -76,19 +76,19 @@
       <p>
         There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. If Paraview is great for 2D or 3D postprocessing, Tecplot is more convenient for plotting graphs of 1D cuts in python.
         The output variables were changed for the impact equations with the removal of unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
-        Then, IMPACT variables have been added in both conservative and non-conservative forms to ease postprocessing.
+        Then, impact variables have been added in both conservative and non-conservative forms to ease postprocessing.
         The collection efficiency, that characterises the ability of the airfoil to capture water, has been computed and exported. This is a common way in the literature to compare droplet impingement rates.
       </p>
 
       <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
       <p>
-        As said before, the Euler problem was duplicated but for the Impact, the <a href="problem.html" class="text">system</a> to resolve is different.
+        As said before, the Euler problem was duplicated but for the impact, the <a href="problem.html" class="text">system</a> to resolve is different.
         Indeed, in comparison with the Euler problem, there is no pressure term and there are two terms to add : the drag and the gravity terms.
       </p>
 
       <p>
-        First, the gravity term was already implemented in SU2, so it should be added for the Impact model in the same way than in the other model where it is used.
-        But for the drag term, it was added exclusively for the Impact problem. In order to know how to add them,
+        First, the gravity term was already implemented in SU2, so it should be added for the impact model in the same way than in the other model where it is used.
+        But for the drag term, it was added exclusively for the impact problem. In order to know how to add them,
         we rewrote the problem in a conservative way with W the solution vector, F the flow and Q the source term.
       </p>
 
@@ -133,7 +133,7 @@
 
       <h2>Boundary Conditions</h2>
       <p>
-        A new type of boundary conditions for the Impact model was added, named IMPACT WALL and discrebed below.
+        A new type of boundary conditions for the impact model was added, named impact WALL and discrebed below.
       </p>
 
       <center>
@@ -149,13 +149,13 @@
 
         <figure>
           <img src="../Images/aile.png" alt="Boundary Conditions Figure" title="Boundary Conditions Figure" />
-          <figcaption> Figure 2 : IMPACT WALL boundary condition</figcaption>
+          <figcaption> Figure 2 : Impact WALL boundary condition</figcaption>
         </figure>
       </center>
 
       <p>
         The idea is that : if the speed of the flow penetrates the boundary, we set the velocity normal component  and the coefficient alpha at 0
-        and if the speed of flow emerges from the boundary, the velocity is not changed. Simultaneously, a new variable  define on this IMPACT WALL boundary  where the impinging mass is calculated.
+        and if the speed of flow emerges from the boundary, the velocity is not changed. Simultaneously, a new variable  define on this impact WALL boundary  where the impinging mass is calculated.
       </p>
 
 

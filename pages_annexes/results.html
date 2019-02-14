@@ -30,7 +30,7 @@
       <h2>2D Results - NACA0012</h2>
 
       <p>
-        In this part, the results obtained by using the newly implemented IMPACT model will be discussed. At first, it was chosen to validate this model over simple 2D simulations. In order to do so, simulations on the NACA0012 geometry were performed. This particular geometry is a classic 2D benchmark for CFD simulations and a great deal of information can be found in the scientific literature.
+        In this part, the results obtained by using the newly implemented impact model will be discussed. At first, it was chosen to validate this model over simple 2D simulations. In order to do so, simulations on the NACA0012 geometry were performed. This particular geometry is a classic 2D benchmark for CFD simulations and a great deal of information can be found in the scientific literature.
       </p>
       <p>
         On the figure below, it is possible to observe the chosen unstructured mesh which is more refined around the airfoil.
@@ -55,7 +55,7 @@
         <img src="../Images/Comp_beta_MVD20.png" alt="Comp_beta_MVD20" title="beta comparisons at MVD=20μm" width=800px/>
       </center>
       <p>
-        On the figure above, it appears that the curves are not overlapping, even if the same general shape is observed in both cases. The error on the maximum is approximately 7%  and is consistant with the errors on the curvilinear abscissae for which the beta coefficient reaches zero, on the lower and the upper parts of the wing. Besides, the shifting of the curve alongside the AoA in the second case is indeed observable for our results and enable us to validate the general constituency of our new IMPACT model.
+        On the figure above, it appears that the curves are not overlapping, even if the same general shape is observed in both cases. The error on the maximum is approximately 7%  and is consistant with the errors on the curvilinear abscissae for which the beta coefficient reaches zero, on the lower and the upper parts of the wing. Besides, the shifting of the curve alongside the AoA in the second case is indeed observable for our results and enable us to validate the general constituency of our new impact model.
       </p>
       <p>
         There are various hypotheses which may explain the discrepancies between the results, but above all we think that it could be possible to enhance the correspondance by using a more refined mesh, since ours might just be too coarse in front of the one used by Kim et al.
@@ -79,7 +79,7 @@
       As the NACA0012 airfoil is a classic benchmark geometry for 2D cases, the ONERA M6 airfoil is largely used to perform 3D simulations. However, contrary to the NACA0012, the 3D geometry at stake does not seem usually considered for icing problems. Hence, only a few articles present the desired results on the ONERA M6 airfoil.
       </p>
       <p>
-      The 3D view below shows the results obtained with the IMPACT model for Ma=0.2 and MVD=20μm at zero angle of attack.
+      The 3D view below shows the results obtained with the impact model for Ma=0.2 and MVD=20μm at zero angle of attack.
       </p>
       <center>
         <img src="../Images/Onera_vel.png" alt="Onera_vel" title="Left: air velocity, Right: droplet velocity" width=800px/>
@@ -94,7 +94,7 @@
         <img src="../Images/beta3D.png" alt="beta3D" title="impingement coefficient on ONERA M6" width=800px/>
       </center>
       <p>
-      Once more, even if some simulations for higher refined grids should be considered to observe a better ressemblance with the results obtained in the literature, the newly implemented IMPACT model is satisfactorily working with both 2D and 3D cases.
+      Once more, even if some simulations for higher refined grids should be considered to observe a better ressemblance with the results obtained in the literature, the newly implemented impact model is satisfactorily working with both 2D and 3D cases.
       </p>
 
       <h2>3D Results - Industrial Geometries</h2>
