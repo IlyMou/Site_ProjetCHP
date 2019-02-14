@@ -54,30 +54,30 @@ div
   background-color: white;
   border: 2px groove #194c70;
   border-radius: 10px;
-  min-height : 25px;
+  min-height : 40px;
   color: white;
 }
 
 .larg1
 {
-  max-width: 250px;
+  max-width: 280px;
 }
 
 .larg2
 {
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .larg3
 {
-  height: 110px;
-  max-width: 450px;
+  height: 140px;
+  max-width: 500px;
 }
 
 .larg4
 {
   height: 80px;
-  max-width: 480px;
+  max-width: 530px;
 }
 .para
 {
