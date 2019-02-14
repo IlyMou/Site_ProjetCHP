@@ -32,11 +32,11 @@
       <h2>SU2</h2>
 
       <!-- <h3>Study of the structure of the code</h3> -->
-      <p>SU2 is an open-source suite for multiphysics simulation created by Stanford University.
+      <p>SU2 is an open-source suite for multiphysics simulations created by Stanford University.
       This code is written in C++ and have more than 500,000 lines of code.
-      This code is used to resolve partial differential equations on unstructured meshes.
-      SU2 has a wide applicability like aeronautical, automotive, naval or renewable energy.
-      The core of SU2 is SU2 CFD. It can be used for compressible or turbulent flows.</p>
+      Meant to resolve partial differential equations on unstructured meshes,
+      SU2 has a wide applicability in various fields, like aeronautical, automotive, naval or renewable energy.
+      The core of the suite is SU2 CFD, which can be used for compressible or turbulent flows.</p>
 
 
       <h2>Structure of SU2 CFD</h2>
@@ -46,10 +46,12 @@
         <figcaption>Structure of SU2_CFD</figcaption>
       </figure>
 
-      <p>SU2 CFD is divided into several classes. Classes in CConfig permit to read the config file and configurate the simulation. Classes in COutput create output files for the simulation in the requested format.
-      CNumerics contains the different schemes to calculate flows. The different types of equation are computed in CSolver.
-      The classes in CSolver are used to construct the jacobian and the source terms in each iteration. These classes also call functions from CNumerics to use scheme defined in CNumerics.
-      Equations are only present in their class in CSolver. In our project, the modifications are mainly in a new class in CSolver.</p>
+      <p>SU2 CFD is divided into several classes. Classes in CConfig enable to read the config file and configurate the simulation.
+      Classes in COutput create output files for the simulation in the requested format.
+      CNumerics contains the different schemes to calculate flows, but the different types of equations are computed in CSolver.
+      The classes in CSolver are used to construct the jacobian and the source terms in each iteration.
+      These classes also call functions from CNumerics to use scheme defined in CNumerics.
+      However, equations are only present in their classes in CSolver, where our modifications are mainly located in a new class.</p>
 
     </section>
   </center>
