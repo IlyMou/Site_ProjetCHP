@@ -19,4 +19,4 @@ Repertoire :
 - _pages_annexes_ contenant les autres pages web du site et accesible à partir de _accueil.html_,
 - _Images_ contenant toute les images nécessaires au site web.
 
-Copyright 2018-2019, B. Constant, M. Fleurotte, A. Motte, I Moufid,  and the supervisors.
+Copyright 2018-2019, B. Constant, M. Fleurotte, A. Motte, I Moufid et les encadrants du projet.
