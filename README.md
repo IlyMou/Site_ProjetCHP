@@ -1,7 +1,7 @@
 -----------------------------------------------------------
 # Site Web du Projet de dernière année en filière CHP à l'ENSEIRB-MATMECA
 -----------------------------------------------------------
-## Site Web faisant office de compte rendu du travail effectué
+## Site Web faisant office de compte rendu du projet effectué
 
 **Objectif** : Implémentation d'un nouveau solveur dans le code SU2.
 
