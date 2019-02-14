@@ -36,39 +36,39 @@
         On the figure below, it is possible to observe the chosen unstructured mesh which is more refined around the airfoil.
       </p>
       <center>
-        <img src="../Images/paraview_mesh.png" alt="paraview_mesh" title="2D mesh around NACA0012" width=400px/>
+        <img src="../Images/paraview_mesh.png" alt="paraview_mesh" title="2D mesh around NACA0012" width=800px/>
       </center>
       <p>
-        As said before, in order to run the impact equations around the geometry, one needs first to obtain the air solution by running the Euler equations with the very same parameters. For the 2D validation of the code, the results were compared with the ones obtained by Kim et al. in their paper « Ice accretion modeling using an eulerian approach for droplet impingement », since they are using an Eulerian approach too. Furthermore, the same variables were chosen by setting Ma=0.31 and MVD=0.2μm.
+        As said before, in order to run the impact equations around the geometry, one needs first to obtain the air solution by running the Euler equations with the very same parameters. For the 2D validation of the code, the results were compared with the ones obtained by Kim et al. in their paper « Ice accretion modeling using an eulerian approach for droplet impingement », since they are using an Eulerian approach too. Furthermore, the same variables were chosen by setting Ma=0.31 (Mach Number) and MVD=0.2μm (Median Volumetric Diameter).
       </p>
       <p>
-        On the figure below, the results obtained for an angle of attack of 0° are gathered for both the air and the droplet solutions. On these figures, the similarities between the two can be evaluated. The droplet solution is truly close to the air solution and the fact that the droplets are following the path created by the air is even more blatant. Indeed, by observing both velocities, it appears naturally that the droplets are carried by the air alongside the airfoil. The maxima are reached at the same positions and the tendencies are the same for the two quantities at stake (alpha/density, droplet_vel/air_vel). Obviously, the air is faster that the droplets, since the latter is transported by the former.
+        On the figure below, the results obtained for an angle of attack of 0° are gathered for both the air and the droplet solutions. On these figures, the similarities between the two can be evaluated. The droplet solution is truly close to the air solution and the fact that the droplets are following the path created by the air is even more blatant. Indeed, by observing both velocities, it appears naturally that the droplets are carried by the air alongside the airfoil. The maxima are reached at the same positions and the tendencies are the same for the two quantities at stake (alpha/density, droplet_vel/air_vel). Obviously, the air flow is faster that the droplets, since the latter is transported by the former.
       </p>
       <center>
         <img src="../Images/density_comp.png" alt="density_comp" title="Left: air density, Right: droplet alpha" width=800px/>
         <img src="../Images/vel_comp.png" alt="vel_comp" title="Left: air velocity, Right: droplet velocity" width=800px/>
       </center>
       <p>
-        The easiest way to compare the results is to plot the collection efficiency (β) according to the curvilinear abscissa. The comparisons were performed for two different angles of attack (AoA=0° and AoA=4°), for a constant MVD of 20μm.
+        The easiest way to compare the results is to plot the collection efficiency (β) according to the curvilinear abscissa. The comparisons were performed for two different angles of attack (AoA=0° and AoA=4°) with a constant MVD of 20μm.
       </p>
       <center>
         <img src="../Images/Comp_beta_MVD20.png" alt="Comp_beta_MVD20" title="beta comparisons at MVD=20μm" width=800px/>
       </center>
       <p>
-        On the figure above, it appears that the curves are not overlapping, even if the same general shape is observed it both cases. The error on the maximum is approximately 7%  and is consistant with the errors on the curvilinear abscissae for which the beta coefficient reaches zero, on the lower and the upper parts of the wing. Besides, the shifting of the curve alongside the AoA in the second case is indeed observable for our results and enable us to validate the general constituency of our new IMPACT model.
+        On the figure above, it appears that the curves are not overlapping, even if the same general shape is observed in both cases. The error on the maximum is approximately 7%  and is consistant with the errors on the curvilinear abscissae for which the beta coefficient reaches zero, on the lower and the upper parts of the wing. Besides, the shifting of the curve alongside the AoA in the second case is indeed observable for our results and enable us to validate the general constituency of our new IMPACT model.
       </p>
       <p>
-        There are various hypotheses which may explain the discrepancies between the results, but above all we think that it could be possible to enhance the correspondance by using a more refined mesh, since ours might be just too coarse in front of the one used by Kim et al.
+        There are various hypotheses which may explain the discrepancies between the results, but above all we think that it could be possible to enhance the correspondance by using a more refined mesh, since ours might just be too coarse in front of the one used by Kim et al.
       </p>
       <p>
         After this series of experiments, the opposite was done, meaning that the AoA was set at 0°, leaving only the droplet diameters to vary from 10 to 160μm.
       </p>
       <center>
-        <img src="../Images/Comp_beta_AoA0.png" alt="Comp_beta_AoA0" title="beta comparisons at AoA=0" width=400px/>
-        <img src="../Images/beta_comp.png" alt="beta_comp" title="Left: MVD=20μm, Right: MVD=160μm" width=400px/>
+        <img src="../Images/Comp_beta_AoA0.png" alt="Comp_beta_AoA0" title="beta comparisons at AoA=0" width=800px/>
+        <img src="../Images/beta_comp.png" alt="beta_comp" title="Left: MVD=20μm, Right: MVD=160μm" width=800px/>
       </center>
       <p>
-        This figure that gathers all the results for the collection efficiencies shows that, as it was foreseen, the impingement on the airfoil leading edge is increasing in accordance with the droplet diameters. Hence, for an important size of droplet, the maximum of the collection efficiency is getting closer to 1, which would mean a perfect water catchment on the leading edge. Moreover, it can be seen on the 2D view that a greater size for the droplets enables them to impinge a larger part of the wing, which is also a very important results.
+        This figure that gathers all the results for the collection efficiencies shows that, as it was foreseen, the impingement on the airfoil leading edge is increasing in accordance with the droplet diameters. Hence, for an important size of droplet, the maximum of the collection efficiency is getting closer to 1, which would mean a perfect water catchment on the leading edge. Moreover, it can be seen on the 2D view that a greater size for the droplets enables them to impinge a larger part of the wing, which is also a very important outcome.
       </p>
       <p>
         Finally, considering all the computations and the discussed results over this first 2D geometry, we were confident to test our model on 3D cases, and switch to the ONERA M6 airfoil.
@@ -76,7 +76,7 @@
 
       <h2>3D Results - ONERA M6</h2>
       <p>
-      As the NACA0012 airfoil was a classic benchmark geometry for 2D cases, the ONERA M6 airfoil is largely used to perform 3D simulations. However, contrary to the NACA0012, the 3D geometry at stake does not seem usually considered for icing problems. Hence, only a few articles present the results needed here using the ONERA M6.
+      As the NACA0012 airfoil is a classic benchmark geometry for 2D cases, the ONERA M6 airfoil is largely used to perform 3D simulations. However, contrary to the NACA0012, the 3D geometry at stake does not seem usually considered for icing problems. Hence, only a few articles present the desired results on the ONERA M6 airfoil.
       </p>
       <p>
       The 3D view below shows the results obtained with the IMPACT model for Ma=0.2 and MVD=20μm at zero angle of attack.
@@ -85,19 +85,19 @@
         <img src="../Images/Onera_vel.png" alt="Onera_vel" title="Left: air velocity, Right: droplet velocity" width=800px/>
       </center>
       <p>
-      Yet quantitatively comprehensive, these results are not enough no validate our method for 3D simulation. Again, a study of the impingement coefficient was necessary.
+      Yet quantitatively comprehensive, these results are not enough no validate our method for 3D simulations. Again, a study of the impingement coefficient was necessary.
       </p>
       <p>
-      Considering the results obtained by Chang and al. in their paper « Three-Dimensional Modelling and Simulation of the Ice Accretion Process on Aircraft Wings », we managed to obtain consistant results. Besides, roughly the same commentaries made for the previous 2D case apply here. In this case, the simulation used the following parameter : Ma=0.329, LWC=0.68 and MVD=20μm at AoA=4°.
+      Considering the results obtained by Chang and al. in their paper « Three-Dimensional Modelling and Simulation of the Ice Accretion Process on Aircraft Wings », we managed to obtain consistant results. Besides, most of the comments made for the previous 2D case apply here. In this case, the simulation used the following parameters : Ma=0.329, LWC=0.68 and MVD=20μm at AoA=4°.
       </p>
       <center>
         <img src="../Images/beta3D.png" alt="beta3D" title="impingement coefficient on ONERA M6" width=800px/>
       </center>
       <p>
-      Once more, even if some simulation for a higher refined grid should be considered to observe a better ressemblance with the results obtained in the literature, the newly implemented IMPACT model is satisfactorily working with both 2D and 3D cases.
+      Once more, even if some simulations for higher refined grids should be considered to observe a better ressemblance with the results obtained in the literature, the newly implemented IMPACT model is satisfactorily working with both 2D and 3D cases.
       </p>
 
-      <h2>3D Results - INDUSTRIAL GEOMETRIES</h2>
+      <h2>3D Results - Industrial Geometries</h2>
       <p>
       The last step was to apply the model on real industrial geometries, different from the classic benchmark problems studied so far. Unfortunately, various issues implying the translation of the industrial mesh provided by EPSILON-ALCEN to be SU2 compatible made that impossible at the time of this writing.
       </p>
