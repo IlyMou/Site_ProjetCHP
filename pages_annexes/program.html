@@ -37,11 +37,13 @@
 
 
 
-      <p>In the SU2 code, a solver has been added for impact equation.
+      <p>In the SU2 code, a solver has been added for the impact equations.
       This solver use the air solution generated with the Euler solver.
-      Impact equations are similar to the Euler equations, so the impact solver is based on the Euler solver.
-      At the beginning we have search how is build the Euler solver to duplicate this solver and create the impact solver.
-      The duplication of the solver has added 20,000 lines distributed in different files in the SU2 code.
+      These new equations are similar to the Euler equations, which is why, as said before,
+      the impact solver is based on the pre-existing Euler solver.
+      The first step was to understand the structure of SU2_CFD and search how the Euler solver was implemented in order
+      to duplicate it and create the new impact solver, before further modifications.
+      The duplication of the solver has added 20,000 lines distributed in various files in the SU2 code.
       </p>
 
 
@@ -63,19 +65,19 @@
 
       <h2>Cleaning</h2>
       <p>
-        The goal of the cleaning is to reduce the number of lines in the Impact solver. The main file of this solver is solver_direct_impact.cpp. The cleaning ease the work in this file.
-        For each function,if the function is not necessary, the function is removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary part, like viscous part or lift coefficient, are removed.
-        We have verified that the results in a test case doesn't change.
-        32 function have been removed, it reduced the number of lines in solver_direct_impact.cpp by 9,000.
+        The goal of the cleaning was to reduce the number of lines in the Impact solver, mainly in solver_direct_impact.cpp. The cleaning was supposed to ease the work in this file.
+        For each function, if the function was not necessary, the function was removed in the files solver_direct_impact.cpp and solver_structure.h. Else unnecessary parts, like viscous part or lift coefficient, were removed.
+        After every modification, a series of tests was needed in order to check that the results remained unchanged.
+        32 function have been removed, which reduced the number of lines in solver_direct_impact.cpp by 9,000.
       </p>
 
 
       <h2>Output</h2>
       <p>
-        There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. Paraview is great for 2D or 3D postprocessing. Tecplot is useful for plotting graphs of 1D cuts in python.
-        The output variables have been changed for the impact equations. We have removed unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
-        Impact variables have been added in both conservative and non-conservative forms to ease postprocessing.
-        The collection efficiency, which characterise the ability of the airfoil to capture water, has been computed and exported. This is a common way in the literature to compare droplet impingement rates.
+        There are two output formats in SU2 CFD for visualisation which are Paraview and Tecplot. If Paraview is great for 2D or 3D postprocessing, Tecplot is more convenient for plotting graphs of 1D cuts in python.
+        The output variables were changed for the impact equations with the removal of unnecessary variables in impact output files like pressure, pressure coefficient or Mach number.
+        Then, IMPACT variables have been added in both conservative and non-conservative forms to ease postprocessing.
+        The collection efficiency, that characterises the ability of the airfoil to capture water, has been computed and exported. This is a common way in the literature to compare droplet impingement rates.
       </p>
 
       <h2>Source Term </h2> <!-- (<a href="ts.html">details</a>) -->
